@@ -7,7 +7,8 @@ export default function Counter() {
 
     // funzione di incremento
     function incrementa() {
-        setCount(count + 1);
+        setCount((current) => current + 1);
+        setCount((current) => current + 1);
     }
 
     // funzione di decremento
