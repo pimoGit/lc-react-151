@@ -1,3 +1,4 @@
+import { useState } from "react";
 import Accordion from "./Accordion";
 
 function AccordionList() {
@@ -24,12 +25,17 @@ function AccordionList() {
         },
     ];
 
+    // settiamo la var di stato del componente per gestire l'apertura
+    const [activeAccordion, setActiveAccordion] = useState(null);
+
     return (
         <div className="accordion-list">
             {faqs.map((faq) => (
                 <Accordion key={faq.id}
                     title={faq.title}
                     content={faq.content}
+                    isOpen={activeAccordion === faq.id}
+                    onAccToggle={() => setActiveAccordion(faq.id)}
                 />
             ))}
 

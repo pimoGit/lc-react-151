@@ -1,25 +1,15 @@
-import { useState } from "react";
-
 function Accordion(props) {
 
-    // settiamo la var di stato del componente per gestire l'apertura
-    const [isOpen, setIsOpen] = useState(false);
-
     // destrutturiamo props
-    const { title, content } = props;
+    const { title, content, isOpen, onAccToggle } = props;
 
-    // funzione di gestione valore Open
-    function handleOpen() {
-        // setto il valore booleano al suo esatto opposto
-        setIsOpen((current) => !current);
-    }
 
     return (
         <div className="accordion">
             <div className="accordion__title">
                 <h3>{title}</h3>
                 <button
-                    onClick={handleOpen}
+                    onClick={onAccToggle}
                     className="accordion__btn">
                     {isOpen ? "-" : "+"}
                 </button>
