@@ -35,7 +35,7 @@ function AccordionList() {
                     title={faq.title}
                     content={faq.content}
                     isOpen={activeAccordion === faq.id}
-                    onAccToggle={() => setActiveAccordion(faq.id)}
+                    onAccToggle={() => setActiveAccordion(activeAccordion === faq.id ? null : faq.id)}
                 />
             ))}
 
