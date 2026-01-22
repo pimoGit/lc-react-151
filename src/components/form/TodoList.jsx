@@ -7,7 +7,8 @@ function TodoList() {
 
     // creiamo la var di stato per gestire la lista
     const [tasks, setTasks] = useState(initialTasks);
-
+    //  altra var di stato che gestisce valore di input
+    const [newTask, setNewTask] = useState('');
 
     return (
         <div className="container mt-5 w-50">
@@ -27,6 +28,8 @@ function TodoList() {
                         type="text"
                         className="form-control"
                         placeholder="Cosa devi fare?"
+                        value={newTask}
+                        onChange={e => { setNewTask(e.target.value) }}
                     />
                     <button className="btn btn-outline-secondary">Aggiungi</button>
                 </div>
