@@ -10,6 +10,17 @@ function TodoList() {
     //  altra var di stato che gestisce valore di input
     const [newTask, setNewTask] = useState('');
 
+    // funzione di gestione invio form
+    const addTask = e => {
+        e.preventDefault();
+        // mi creo un nuovo array aggiornato con valori predeneti più nuovo da input
+        const updatedTasks = [...tasks, newTask];
+        // cambio il valore di var stato tasks con nuovo array appena creato
+        setTasks(updatedTasks);
+        // ripuliamo il value dell'input
+        setNewTask("");
+    }
+
     return (
         <div className="container mt-5 w-50">
             <h1>Tasks</h1>
@@ -22,7 +33,7 @@ function TodoList() {
             </ul>
 
             {/* form per aggiungere nuovo task a lista precedente */}
-            <form>
+            <form onSubmit={addTask}>
                 <div className="input-group mb-3">
                     <input
                         type="text"
