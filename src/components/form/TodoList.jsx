@@ -21,13 +21,24 @@ function TodoList() {
         setNewTask("");
     }
 
+    // funzione per rimuovere un task dall'array
+    const removeTask = i => {
+        const updatedTasks = tasks.filter((task, indice) => {
+            return indice !== i
+        });
+        setTasks(updatedTasks);
+    }
+
     return (
         <div className="container mt-5 w-50">
             <h1>Tasks</h1>
             <ul className="list-group">
                 {tasks.map((task, index) => (
                     <li className="list-group-item" key={index}>
-                        {task}
+                        {task} <br />
+                        <button onClick={() => removeTask(index)}>
+                            Elimina
+                        </button>
                     </li>
                 ))}
             </ul>
