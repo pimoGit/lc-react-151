@@ -7,10 +7,12 @@ function TodoList() {
 
     // creiamo la var di stato per gestire la lista
     const [tasks, setTasks] = useState(initialTasks);
-    // dreiamo var di stato per versione filtrata todolist
+    // creiamo var di stato per versione filtrata todolist
     const [filteredTasks, setFilteredTasks] = useState(tasks);
-    //  altra var di stato che gestisce valore di input
+    //  altra var di stato che gestisce valore di input nuovoTask
     const [newTask, setNewTask] = useState('');
+    // altra var di stato che gestisce valore input search
+    const [search, setSearch] = useState('');
 
 
 
@@ -36,6 +38,17 @@ function TodoList() {
     return (
         <div className="container mt-5 w-50">
             <h1>Tasks</h1>
+
+            <div className="mb-3">
+                <input
+                    type="text"
+                    className="form-control"
+                    placeholder="cerca i tuoi tasks"
+                    value={search}
+                    onChange={e => { setSearch(e.target.value) }}
+                />
+            </div>
+
             <ul className="list-group">
                 {filteredTasks.map((task, index) => (
                     <li className="list-group-item" key={index}>
