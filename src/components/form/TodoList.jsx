@@ -7,13 +7,12 @@ function TodoList() {
 
     // creiamo la var di stato per gestire la lista
     const [tasks, setTasks] = useState(initialTasks);
+    // dreiamo var di stato per versione filtrata todolist
+    const [filteredTasks, setFilteredTasks] = useState(tasks);
     //  altra var di stato che gestisce valore di input
     const [newTask, setNewTask] = useState('');
 
-    //  all'avvio e cambio var tasks e newTask
-    useEffect(() => {
-        console.log("Esecuzione CB Effect Solo all'avvio")
-    }, [newTask, tasks]);
+
 
     // funzione di gestione invio form
     const addTask = e => {
@@ -38,7 +37,7 @@ function TodoList() {
         <div className="container mt-5 w-50">
             <h1>Tasks</h1>
             <ul className="list-group">
-                {tasks.map((task, index) => (
+                {filteredTasks.map((task, index) => (
                     <li className="list-group-item" key={index}>
                         {task} <br />
                         <button onClick={() => removeTask(index)}>
