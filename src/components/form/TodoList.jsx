@@ -1,7 +1,7 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 
 // setto l'array da usare come valore iniziale della var di stato dei dati
-const initialTasks = ['Fare la spesa', 'Pulire casa', 'Fare il bucato'];
+const initialTasks = ['Fare la spesa', 'Pulire casa', 'Fare il bucato']
 
 function TodoList() {
 
@@ -9,6 +9,11 @@ function TodoList() {
     const [tasks, setTasks] = useState(initialTasks);
     //  altra var di stato che gestisce valore di input
     const [newTask, setNewTask] = useState('');
+
+    // Solo all'avvio
+    useEffect(() => {
+        console.log("Esecuzione CB Effect Solo all'avvio")
+    }, []);
 
     // funzione di gestione invio form
     const addTask = e => {
