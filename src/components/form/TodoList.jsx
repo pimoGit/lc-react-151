@@ -37,9 +37,13 @@ function TodoList() {
 
     // aggiungiamo useEffect per gestire il filtraggio da valore input search
     useEffect(() => {
-        console.log("è stato montato il componente di todo");
-
-    }, [search])
+        // creiamo nuovo array filtrato in base input search
+        const newFilteredTasks = tasks.filter((task) => {
+            return task.toLowerCase().includes(search.toLowerCase())
+        });
+        //  assegnamo nuovo array filtrato a var stato filteredTasks (tramite il suo setter)
+        setFilteredTasks(newFilteredTasks);
+    }, [search, tasks])
 
     return (
         <div className="container mt-5 w-50">
