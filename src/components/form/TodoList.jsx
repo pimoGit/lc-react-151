@@ -10,10 +10,10 @@ function TodoList() {
     //  altra var di stato che gestisce valore di input
     const [newTask, setNewTask] = useState('');
 
-    //  all'avvio e cambio var tasks
+    //  all'avvio e cambio var tasks e newTask
     useEffect(() => {
         console.log("Esecuzione CB Effect Solo all'avvio")
-    }, [tasks]);
+    }, [newTask, tasks]);
 
     // funzione di gestione invio form
     const addTask = e => {
