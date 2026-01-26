@@ -8,7 +8,6 @@ function App() {
 
     return (
         <>
-            <h1>Eccomi bella fresca nuova appa React</h1>
             {/* <Counter />
             <AccordionList /> 
             <FormMain />
