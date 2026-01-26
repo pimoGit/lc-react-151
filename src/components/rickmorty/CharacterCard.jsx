@@ -6,7 +6,7 @@ function CharacterCard(props) {
     // const name = props.name;
     // const originName = props.originName;
 
-    const { image, status, name, originName } = props;
+    const { image, status, name, originName } = props.character;
 
     return (
         <div

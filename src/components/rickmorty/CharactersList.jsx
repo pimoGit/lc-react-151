@@ -31,10 +31,7 @@ function CharactersList() {
                 {characters.map(character => (
                     <CharacterCard
                         key={character.id}
-                        image={character.image}
-                        name={character.name}
-                        status={character.status}
-                        originName={character.origin.name}
+                        character={character}
                     />
                 ))}
             </div>
