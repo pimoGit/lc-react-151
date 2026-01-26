@@ -1,5 +1,5 @@
 import axios from "axios"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 
 const endpoint = "https://rickandmortyapi.com/api/character";
 
@@ -15,13 +15,21 @@ function CharactersList() {
             .catch(err => console.error("Errore nella richiesta"))
     }
 
+    // chiamata a funzione di richiesta personaggi
+    // es. commentato di come NON fare (ovvero senza lo useEffect)
+    // fetchCharacters();
+
+    // versione corretta con useEffect e senza dipendeze (aolo al primo montaggio del comp)
+    useEffect(fetchCharacters, []);
+
     return (
         <div>
             <h2>Ecco i personaggi di Rick & Morty</h2>
-            <button onClick={fetchCharacters}>Carica Personaggi</button>
             <ul>
                 {characters.map((character) => (
-                    <li key={character.id}>{character.name}</li>
+                    <li key={character.id}>
+                        {character.name}
+                    </li>
                 ))}
             </ul>
         </div>
