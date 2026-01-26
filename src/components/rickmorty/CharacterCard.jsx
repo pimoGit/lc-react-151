@@ -1,4 +1,4 @@
-function CharacterCard(props) {
+function CharacterCard({ character }) {
 
     // destrutturiamo oggetto props
     // const image = props.image;
@@ -6,7 +6,7 @@ function CharacterCard(props) {
     // const name = props.name;
     // const originName = props.originName;
 
-    const { image, status, name, originName } = props.character;
+    const { image, status, name, originName } = character;
 
     return (
         <div
