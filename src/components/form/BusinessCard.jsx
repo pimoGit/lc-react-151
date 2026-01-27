@@ -26,10 +26,17 @@ function BusinessCard() {
     // funzione di gestione dei change dei vari input
 
     function handleFormData(e) {
+
+        // destrutturazione dell'oggetto event (e)
+        const { name, value } = e.target;
+
         setFormData({
             ...formData,
-            [e.target.name]: e.target.value
+            [name]: value
         });
+
+        // variante per asincronicità
+        //  setFormData((currentFormData) => ({...currentFormData, [name]: value}));
 
 
     }
