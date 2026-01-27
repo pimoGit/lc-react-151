@@ -3,6 +3,7 @@ import AccordionList from "./components/accordion/AccordionList"
 import FormMain from "./components/form/FormMain"
 import TodoList from "./components/form/TodoList"
 import CharactersList from "./components/rickmorty/CharactersList"
+import BusinessCard from "./components/form/BusinessCard"
 
 function App() {
 
@@ -12,8 +13,9 @@ function App() {
             <AccordionList /> 
             <FormMain />
             <TodoList />
-            */}
             <CharactersList />
+            */}
+            <BusinessCard />
         </>
     )
 }
