@@ -1,11 +1,7 @@
-import NavBar from "../components/NavBar"
-
-
 function HomePage() {
 
     return (
         <>
-            <NavBar />
             <h2>Ciao sei sulla Home Page della tua appa React.</h2>
             <p>
                 Contenuto della HOMEPAGE

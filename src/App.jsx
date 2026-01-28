@@ -6,14 +6,19 @@ import HomePage from "./pages/HomePage";
 import AboutUs from "./pages/AboutUs";
 import Charachters from "./pages/Charachters";
 
+// import del layout di ref
+import DefaultLayout from "./layouts/DefaultLayout";
+
 function App() {
 
     return (
         <BrowserRouter>
             <Routes>
-                <Route path="/" element={<HomePage />} />
-                <Route path="/chisiamo" element={<AboutUs />} />
-                <Route path="/personaggi" element={<Charachters />} />
+                <Route element={<DefaultLayout />}>
+                    <Route path="/" element={<HomePage />} />
+                    <Route path="/chisiamo" element={<AboutUs />} />
+                    <Route path="/personaggi" element={<Charachters />} />
+                </Route>
             </Routes>
         </BrowserRouter>
     )

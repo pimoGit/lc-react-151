@@ -1,11 +1,7 @@
-import NavBar from "../components/NavBar"
-
-
 function AboutUs() {
 
     return (
         <>
-            <NavBar />
             <h2>Ciao sei qui ti diciamo CHI SIAMO.</h2>
             <p>
                 Contenuto della CHI SIAMO

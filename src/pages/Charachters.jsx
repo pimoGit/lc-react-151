@@ -1,10 +1,7 @@
-import NavBar from "../components/NavBar"
-
 function Charachters() {
 
     return (
         <>
-            <NavBar />
             <h2>Ciao sei qui avrai la LISTA DEI PERSONAGGI.</h2>
             <p>
                 Contenuto della LISTA DEI PERSONAGGI
