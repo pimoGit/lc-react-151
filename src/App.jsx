@@ -9,15 +9,7 @@ import TicketForm from "./components/form/TicketForm"
 function App() {
 
     return (
-        <>
-            {/* <Counter />
-            <AccordionList /> 
-            <FormMain />
-            <TodoList />
-            <CharactersList />
-            <BusinessCard />*/}
-            <TicketForm />
-        </>
+        <h1>Ciao presto sarò un SPA</h1>
     )
 }
 
