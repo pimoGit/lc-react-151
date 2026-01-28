@@ -15,7 +15,7 @@ function App() {
         <BrowserRouter>
             <Routes>
                 <Route element={<DefaultLayout />}>
-                    <Route path="/" element={<HomePage />} />
+                    <Route index element={<HomePage />} />
                     <Route path="/chisiamo" element={<AboutUs />} />
                     <Route path="/personaggi" element={<Charachters />} />
                 </Route>
