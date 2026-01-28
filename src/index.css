@@ -1,1 +1,24 @@
 /*  */
+.mainNav {
+    background-color: blueviolet;
+    margin-bottom: 10px;
+    min-height: 50px;
+}
+
+.mainNav ul {
+    list-style-type: none;
+}
+
+.mainNav li {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.mainNav a {
+    color: chartreuse;
+    text-decoration: none;
+}
+
+.mainNav a.active {
+    background-color: chocolate;
+}

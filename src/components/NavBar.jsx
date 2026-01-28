@@ -10,7 +10,7 @@ function NavBar() {
     ]
 
     return (
-        <nav>
+        <nav className="mainNav">
             <ul>
                 {links.map((link, i) => (
                     <li key={i}>
