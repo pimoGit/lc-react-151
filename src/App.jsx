@@ -1,15 +1,21 @@
-import Counter from "./components/Counter"
-import AccordionList from "./components/accordion/AccordionList"
-import FormMain from "./components/form/FormMain"
-import TodoList from "./components/form/TodoList"
-import CharactersList from "./components/rickmorty/CharactersList"
-import BusinessCard from "./components/form/BusinessCard"
-import TicketForm from "./components/form/TicketForm"
+// importiamo tutti i componenti di gestionde delle rotte
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
+// importiamo le varie pages da usare nelle rotte
+import HomePage from "./pages/HomePage";
+import AboutUs from "./pages/AboutUs";
+import Charachters from "./pages/Charachters";
 
 function App() {
 
     return (
-        <h1>Ciao presto sarò un SPA</h1>
+        <BrowserRouter>
+            <Routes>
+                <Route path="/" element={<HomePage />} />
+                <Route path="/chisiamo" element={<AboutUs />} />
+                <Route path="/personaggi" element={<Charachters />} />
+            </Routes>
+        </BrowserRouter>
     )
 }
 
