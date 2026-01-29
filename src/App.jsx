@@ -6,6 +6,7 @@ import HomePage from "./pages/HomePage";
 import AboutUs from "./pages/AboutUs";
 import Charachters from "./pages/Charachters";
 import CharachterDetail from "./pages/CharachterDetail";
+import NotFoundPage from "./pages/NotFoundPage";
 
 // import del layout di ref
 import DefaultLayout from "./layouts/DefaultLayout";
@@ -22,6 +23,7 @@ function App() {
                         <Route index element={<Charachters />} />
                         <Route path=":id" element={<CharachterDetail />} />
                     </Route>
+                    <Route path="*" element={<NotFoundPage />} />
                 </Route>
             </Routes>
         </BrowserRouter >
