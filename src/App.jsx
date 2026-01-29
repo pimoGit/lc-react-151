@@ -5,6 +5,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import HomePage from "./pages/HomePage";
 import AboutUs from "./pages/AboutUs";
 import Charachters from "./pages/Charachters";
+import CharachterDetail from "./pages/CharachterDetail";
 
 // import del layout di ref
 import DefaultLayout from "./layouts/DefaultLayout";
@@ -17,10 +18,13 @@ function App() {
                 <Route element={<DefaultLayout />}>
                     <Route index element={<HomePage />} />
                     <Route path="/chisiamo" element={<AboutUs />} />
-                    <Route path="/personaggi" element={<Charachters />} />
+                    <Route path="/personaggi" >
+                        <Route index element={<Charachters />} />
+                        <Route path=":id" element={<CharachterDetail />} />
+                    </Route>
                 </Route>
             </Routes>
-        </BrowserRouter>
+        </BrowserRouter >
     )
 }
 
