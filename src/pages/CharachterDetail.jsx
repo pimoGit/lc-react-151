@@ -4,6 +4,9 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
+// import del comp di card dettaglio
+import CharacterDetailCard from "../components/rickmorty/CharacterDetailCard";
+
 const endpointBase = "https://rickandmortyapi.com/api/character/";
 
 function CharachterDetail() {
@@ -11,7 +14,7 @@ function CharachterDetail() {
     const { id } = useParams();
 
     // var di stato per salvare info oggetto personaggio
-    const [character, setCharacter] = useState({});
+    const [character, setCharacter] = useState();
 
     // utilizzo il parametro per la chiamata corretta (sempre passando da hook su primo montaggio)
     useEffect(() => {
@@ -23,14 +26,14 @@ function CharachterDetail() {
 
     return (
         <>
-            <h2>Ciao sei qui avrai il DETTAGLIO del personaggio.</h2>
-            <p>
-                Contenuto della LISTA DEI PERSONAGGI
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo earum aliquam corporis eveniet corrupti tempore officiis, minima fuga iste cum numquam ex molestias quis aut commodi facere quia. Quaerat, reprehenderit!
-            </p>
-            <div>
-                <h3>Personaggio: {character.name}</h3>
-            </div>
+            <h2>DETTAGLIO del personaggio.</h2>
+            {character ? (
+                <CharacterDetailCard infoPers={character} />
+            ) : (
+                <p className="loader">Loading...</p>
+            )
+            }
+
         </>
     )
 }
