@@ -2,7 +2,7 @@
 import axios from "axios";
 // importiamo hooks per gestione chiamata e recupero parametro dinamico
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 
 // import del comp di card dettaglio
 import CharacterDetailCard from "../components/rickmorty/CharacterDetailCard";
@@ -20,8 +20,14 @@ function CharachterDetail() {
     useEffect(() => {
         axios.get(endpointBase + id)
             .then(resp => setCharacter(resp.data))
-            .catch(err => console.log("errore sulla chiamata", err))
+            .catch(err => {
+                console.log("errore sulla chiamata", err)
+                navigate('/personaggi');
+            })
     }, [])
+
+    // eseguiamo useNavigate per aver un elemento navigate da utilizzare
+    const navigate = useNavigate();
 
 
     return (
