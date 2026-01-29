@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 function CharacterCard({ character }) {
 
     // destrutturiamo oggetto props
@@ -6,7 +8,7 @@ function CharacterCard({ character }) {
     // const name = props.name;
     // const originName = props.originName;
 
-    const { image, status, name, originName } = character;
+    const { image, status, name, originName, id } = character;
 
     return (
         <div
@@ -21,6 +23,10 @@ function CharacterCard({ character }) {
                     <span className={`status-icon is-${status.toLowerCase()}`}></span>
                     {status} - {originName}
                 </p>
+                <Link to={`/personaggi/${id}`}>
+                    Vai al dettaglio
+                </Link>
+
             </div>
         </div>
     )
