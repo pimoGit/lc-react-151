@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom"
+
 function CharacterDetailCard(props) {
 
     const { infoPers } = props
@@ -11,6 +13,11 @@ function CharacterDetailCard(props) {
             <p>Species: {infoPers.species}</p>
             <p>Origin: {infoPers.origin.name}</p>
             <p>Location: {infoPers.location.name}</p>
+
+            <Link to="/personaggi" className="btn btn-primary">
+                Torna alla lista dei personaggi
+            </Link>
+
         </div>
 
     )
