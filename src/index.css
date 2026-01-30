@@ -154,3 +154,15 @@ body {
     font-size: 1.1rem;
     color: #e0e0e0;
 }
+
+/* preferiti */
+.heart-icon {
+    cursor: pointer
+}
+
+.character-name-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+}

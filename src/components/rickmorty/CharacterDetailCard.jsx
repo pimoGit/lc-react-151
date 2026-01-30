@@ -7,7 +7,9 @@ function CharacterDetailCard(props) {
 
     return (
         <div className="character-detail">
-            <h2>{infoPers.name}</h2>
+            <h2>{infoPers.name}
+                <span className="heart-icon">🤍</span>
+            </h2>
             <img src={infoPers.image} alt={infoPers.name} />
             <p>Status: {infoPers.status}</p>
             <p>Species: {infoPers.species}</p>

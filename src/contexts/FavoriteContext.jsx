@@ -12,6 +12,21 @@ function FavortiteProvider({ children }) {
 
     // creiamo var di stato per lista personaggi
     const [characters, setCharacters] = useState([]);
+    // var di stato per gestire gli ID dei preferiti
+    const [favorites, setFavorites] = useState([]);
+
+    // funzioni di gestione dei preferiti
+    const addFavorite = (characterId) => {
+        setFavorites(prev => [...prev, characterId]);
+    };
+
+    const removeFavorite = (characterId) => {
+        setFavorites(prev => prev.filter(id => id !== characterId));
+    };
+
+    const isFavorite = (characterId) => {
+        return favorites.includes(characterId);
+    };
 
     // funzione che al click fa chiamata Ajax verso endpoint API
     function fetchCharacters() {
@@ -31,6 +46,10 @@ function FavortiteProvider({ children }) {
         <FavortiteContext.Provider
             value={{
                 characters,
+                favorites,
+                addFavorite,
+                removeFavorite,
+                isFavorite
             }}
         >
             {children}
